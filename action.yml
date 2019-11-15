@@ -1,0 +1,15 @@
+name: 'Publish on DockerHub'
+description: 'Build Dockerfile from current branch/tag/PR and Push image to DockerHub'
+inputs:
+  username:
+    description: 'DockerHub username (default: github organization)'
+    required: false 
+  password:
+    description: 'DockerHub password'
+    required: true
+outputs:
+  tag:
+    description: 'Image tag on DockerHub'
+runs:
+  using: 'node12'
+  main: 'index.js'
